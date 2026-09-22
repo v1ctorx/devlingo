@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DevLingo | Inglês para Desenvolvedores</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
+    <script src="javascript.js" defer></script>
+    <script src="review.js" defer></script>
+</head>
+
+<body>
+    <main class="app-container">
+
+        <header class="app-header">
+            <div class="logo">
+
+                <span class="logo-icone">
+                    <i class="fa-solid fa-terminal"></i>
+                </span>
+
+                <div class="logo-text">
+                    <div class="logo-title">
+                        <h1>DevLingo</h1>
+                        <span>LAB</span>
+                    </div>
+
+                    <p>Aprenda inglês. Programe. Vá além.</p>
+                </div>
+
+            </div>
+
+            <div class="user-progress">
+
+                <span>
+                    <i class="fa-solid fa-fire"></i>
+                    <strong id="streak">0</strong>
+                    dias
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-bolt"></i>
+                    <strong id="xp">0</strong>
+                    XP
+                </span>
+
+                <button
+                    type="button"
+                    class="review-button"
+                    id="reviewButton"
+                    title="Revisar respostas"
+                >
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Revisar</span>
+                    <strong id="mistakeCount">0</strong>
+                </button>
+
+            </div>
+        </header>
+
+        <section class="mission-info">
+            <div class="mission-content">
+
+                <span class="mission-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </span>
+
+                <div>
+                    <p class="mission-label">
+                        <i class="fa-solid fa-code"></i>
+                        SUA PRÁTICA
+                    </p>
+
+                    <h2 id="missionTitle">
+                        Escolha sua prática
+                    </h2>
+                </div>
+
+            </div>
+
+            <span class="mission-level">
+                <i class="fa-solid fa-circle"></i>
+                Inglês para devs
+            </span>
+        </section>
+
+        <section
+            class="chat-container"
+            aria-label="Chat para prática de inglês"
+        >
+
+            <div
+                class="chat-messages"
+                id="chatMessages"
+            >
+                <article class="message bot-message">
+
+                    <div class="bot-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                    <div class="message-content">
+                        <strong>
+                            DevLingo
+                            <span class="online-status"></span>
+                        </strong>
+
+                        <p>
+                            Olá! Como você quer praticar inglês hoje?
+                        </p>
+                    </div>
+
+                </article>
+            </div>
+
+            <form
+                class="chat-form"
+                id="chatForm"
+            >
+                <label
+                    for="userInput"
+                    class="visually-hidden"
+                >
+                    Digite sua mensagem para o DevLingo
+                </label>
+
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Digite sua mensagem..."
+                        autocomplete="off"
+                        required
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    id="sendButton"
+                >
+                    <span>Enviar</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+        </section>
+    </main>
+
+    <div
+        class="review-modal"
+        id="reviewModal"
+        hidden
+    >
+        <section
+            class="review-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reviewTitle"
+        >
+            <header class="review-header">
+
+                <div>
+                    <p>HISTÓRICO DE APRENDIZADO</p>
+                    <h2 id="reviewTitle">
+                        Revisar correções
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="close-review"
+                    id="closeReviewButton"
+                    aria-label="Fechar revisão"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </header>
+
+            <div
+                class="review-list"
+                id="reviewList"
+            ></div>
+
+            <footer class="review-footer">
+
+                <button
+                    type="button"
+                    class="clear-review"
+                    id="clearReviewButton"
+                >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar correções
+                </button>
+
+                <button
+                    type="button"
+                    class="reset-progress"
+                    id="resetProgressButton"
+                >
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Reiniciar progresso
+                </button>
+
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
